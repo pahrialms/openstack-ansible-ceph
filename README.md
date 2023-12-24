@@ -1,11 +1,15 @@
 # openstack-ansible-ceph
 This documentation how to install openstack with openstack-ansible and using ceph as storage distribution
 
+### Netplan Config
+
+[netplan.yml](https://github.com/pahrialms/openstack-ansible-ceph/blob/main/network/netplan.yml)
+
 ### Network Cofiguration :
 
-| Host              | BondM          | Bond0.10        | Bond0.30        | Bond0.40        |Bond1.20        | Bond1            |
-|-------------------|----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-|                   | Management     | br-mgmt          | br -vxlan      | br-ext          |br-storage       | FIP Network     |
+| Host              | BondM          | Bond0.10        | Bond0.30        | Bond0.40        |Bond1.20        | br-vlan              |
+|-------------------|----------------|-----------------|-----------------|-----------------|-----------------|---------------------|
+|                   | Management     | br-mgmt          | br -vxlan      | br-ext          |br-storage       |FIP Network/Untag    |
 | ms-controller002 | 172.18.2.12/24 | 172.20.20.12/24 | 172.20.21.12/24 | 172.20.22.12/24 |  172.16.16.12/24 |                 |
 | ms-controller003 | 172.18.2.13/24 | 172.20.20.13/24 | 172.20.21.13/24 | 172.20.22.13/24 | 172.16.16.13/24 |                  |
 | ms-compute001     | 172.18.2.14/24 | 172.20.20.14/24 | 172.20.21.14/24 | 172.20.22.14/24 | 172.16.16.14/24 |                 |
