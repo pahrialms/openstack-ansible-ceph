@@ -1,7 +1,19 @@
 # openstack-ansible-ceph
 This documentation how to install openstack with openstack-ansible and using ceph as storage distribution
 
+### Physical Topology
+
+![image](https://github.com/pahrialms/openstack-ansible-ceph/assets/82088448/fcf43620-0985-4db2-b50d-b6e4c8e5909b)
+
+### Network Architecture
+
+![image](https://github.com/pahrialms/openstack-ansible-ceph/assets/82088448/482f8c55-00f4-4b98-b1f8-3cfd9989c9cd)
+
+
 ### Netplan Config
+
+![image](https://github.com/pahrialms/openstack-ansible-ceph/assets/82088448/b998d792-ed19-43e5-a89b-9dbe6c7b84ea)
+
 
 [netplan.yml](https://github.com/pahrialms/openstack-ansible-ceph/blob/main/network/netplan.yml)
 
