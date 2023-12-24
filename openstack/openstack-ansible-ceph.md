@@ -1,10 +1,11 @@
-There're 5 step installing Openstack with openstack-ansible:
-  1. Prepare deployment host
-  2. Prepare target host
-  3. Configure deployment
-  4. Run playbooks
-  5. Verify Openstack operations
-  6. Configure DVR_SNAT
+
+1. [Prepare Deployment Host](#1-prepare-deployment-host)
+2. [Prepare Target Host](#2-prepare-target-host)
+3. [Configure Deployment](#3-configure-deployment)
+4. [Run Playbooks](#4-run-playbooks)
+5. [Verify Openstack Operations](#5-verify-openstack-operations)
+6. [Configure DVR_SNAT](#6-configure-dvr_snat)
+
 
 ## 1. Prepare deployment host
 
