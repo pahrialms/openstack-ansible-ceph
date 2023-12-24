@@ -1,0 +1,100 @@
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    bonds:
+        bond0:
+            interfaces:
+            - ens3
+            - ens4
+            mtu: 9000
+            parameters:
+                lacp-rate: fast
+                mii-monitor-interval: 100
+                mode: 802.3ad
+                transmit-hash-policy: layer3+4
+        bond1:
+            interfaces:
+            - ens5
+            - ens6
+            mtu: 9000
+            parameters:
+                lacp-rate: fast
+                mii-monitor-interval: 100
+                mode: 802.3ad
+                transmit-hash-policy: layer3+4
+        bondm:
+            addresses:
+            - 172.18.2.11/24
+            dhcp4: false
+            gateway4: 172.18.2.1
+            interfaces:
+            - ens7
+            - ens8
+            mtu: 1500
+            parameters:
+                lacp-rate: fast
+                mii-monitor-interval: 100
+                mode: 802.3ad
+                transmit-hash-policy: layer3+4
+    bridges:
+        br-ext:
+            addresses:
+            - 172.20.22.11/24
+            interfaces:
+            - bond0.40
+        br-mgmt:
+            addresses:
+            - 172.20.20.11/24
+            interfaces:
+            - bond0.10
+            mtu: 9000
+            nameservers:
+                addresses:
+                - 8.8.8.8
+                - 8.8.4.4
+        br-storage:
+            addresses:
+            - 172.16.16.11/24
+            interfaces:
+            - bond1.20
+            mtu: 9000
+        br-vlan:
+            interfaces:
+            - bond1
+            mtu: 9000
+        br-vxlan:
+            addresses:
+            - 172.20.21.11/24
+            interfaces:
+            - bond0.30
+            mtu: 9000
+    ethernets:
+        ens3:
+            mtu: 9000
+        ens4:
+            mtu: 9000
+        ens5:
+            mtu: 9000
+        ens6:
+            mtu: 9000
+        ens7:
+            mtu: 1500
+        ens8:
+            mtu: 1500
+    version: 2
+    vlans:
+        bond0.10:
+            id: 10
+            link: bond0
+        bond0.30:
+            id: 30
+            link: bond0
+        bond0.40:
+            id: 40
+            link: bond0
+        bond1.20:
+            id: 20
+            link: bond1
