@@ -5,6 +5,7 @@
   4. [Run Playbooks](#4-run-playbooks)
   5. [Verify Openstack Operations](#5-verify-openstack-operations)
   6. [Configure DVR_SNAT](#6-configure-dvr_snat)
+  7. [Configure br-provder port](#7-configure-br-provider-port)
 
 
 ## 1. Prepare deployment host
@@ -393,6 +394,14 @@ agent_mode = dvr_snat
 systemctl restart neutron-l3-agent.service
 ```
 
+## 7. Configure br-provider port
+
+Add port on br-provider as output/input nort-south traffic
+* execute on all compute node
+```
+ovs-vsctl add-port br-provider br-vlan
+ovs-vsctl show
+```
 
 
 
