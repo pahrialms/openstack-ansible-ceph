@@ -398,10 +398,13 @@ systemctl restart neutron-l3-agent.service
 
 Add port on br-provider as output/input nort-south traffic
 * execute on all compute node
+* if you have a lot of compute node, please consider to make playbook
 ```
 ovs-vsctl add-port br-provider br-vlan
 ovs-vsctl show
-```
 
+```
+# Reference :
+https://docs.openstack.org/project-deploy-guide/openstack-ansible/latest/
 
 
